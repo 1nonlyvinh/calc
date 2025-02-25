@@ -1,0 +1,14 @@
+.calculator {
+    align-items: center;
+    justify-content: center;
+}
+
+.display {
+    height: 200px;
+    width: 510px; 
+    border: solid 4px;
+}
+
+button {
+    width: 100px; 
+}
