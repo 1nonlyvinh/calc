@@ -1,47 +1,45 @@
 // a lot of element ids for number values + operations
 
-let opperandOne = "null"; 
+let currentOperation = null;
+let currentValue = null; 
+let secondOperand = null;
+let display = document.querySelector('.display');
 
-const add = document.querySelector(".addition").addEventListener("click", function() {
-    console.log("add");
-});
-const sub = document.querySelector('.subtract').addEventListener("click", function() {
-    console.log("sub");
-});
-const mult = document.querySelector('.multiply').addEventListener("click", function() {
-    console.log("mult");
-});
-const divide = document.querySelector('.division').addEventListener("click", function() {
-    console.log("divide");
-});
-const one = document.querySelector('.one').addEventListener("click", function() {
-    console.log("one");
-});
-const five = document.querySelector('.five').addEventListener("click", function() {
-    console.log("five");
-});
-const three = document.querySelector('.three').addEventListener("click", function() {
-    console.log("three");
-});
-const nine = document.querySelector('.nine').addEventListener("click", function() {
-    console.log("nine");
-});
-const six = document.querySelector('.six').addEventListener("click", function() {
-    console.log("six");
-});
-const two = document.querySelector('.two').addEventListener("click", function() {
-    console.log("two");
-});
-const seven = document.querySelector('.seven').addEventListener("click", function() {
-    console.log("seven");
-});
-const eight = document.querySelector('.eight').addEventListener("click", function() {
-    console.log("eight");
-});
-const zero = document.querySelector('.zero').addEventListener("click", function() {
-    console.log("zero");
-});
+const add = document.querySelector(".addition").addEventListener("click", () => setOperation('+'), {});
+const sub = document.querySelector('.subtract').addEventListener("click", () => setOperation('-'), {});
+const mult = document.querySelector('.multiply').addEventListener("click", () => setOperation('*'), {});
+const divide = document.querySelector('.division').addEventListener("click", () => setOperation('/'), {});
+const one = document.querySelector('.one').addEventListener("click", () => updateValue(1), {});
+const five = document.querySelector('.five').addEventListener("click", () => updateValue(5), {});
+const three = document.querySelector('.three').addEventListener("click", () => updateValue(3), {});
+const nine = document.querySelector('.nine').addEventListener("click", () => updateValue(9), {});
+const six = document.querySelector('.six').addEventListener("click", () => updateValue(6), {});
+const two = document.querySelector('.two').addEventListener("click", () => updateValue(2), {});
+const seven = document.querySelector('.seven').addEventListener("click", () => updateValue(7), {});
+const eight = document.querySelector('.eight').addEventListener("click", () => updateValue(8), {});
+const zero = document.querySelector('.zero').addEventListener("click", () => updateValue(0), {});
 
-function createOpperand() {
+function updateValue(value) {
+    currentValue = value;
+    display.innerText = currentValue;
+    console.log(currentValue);
 
 }
+
+function setOperation(operation) {
+    currentOperation = operation;
+    display.innerText = currentValue + currentOperation; 
+
+    console.log(currentOperation);
+}
+
+function setSecondOperand(value) {
+    if (currentOperation !== null) {
+        secondOperand = value;
+        console.log(secondOperand);
+    } else {
+        console.error("Operation is not set.");
+    }
+}
+
+console.log(secondOperand);
