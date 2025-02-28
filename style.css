@@ -1,15 +1,18 @@
 .calculator {
     align-items: center;
     justify-content: center;
+    position: absolute;
 }
 
 .display {
     height: 200px;
     width: 510px; 
     border: solid 4px;
+    background-color: #FF3800;
+    font-family: cursive;
 }
 
 button {
     width: 100px; 
-    background-color: lightgreen; 
+    background-color: rgb(255, 0, 200); 
 }

@@ -5,9 +5,10 @@ let currentValue = 0;
 let secondOperand = 0;
 let isSecondOperand = false; 
 let isFirstOperand = true; 
-let clickCount = 0; 
+
 let display = document.querySelector('.display');
 
+const clear = document.querySelector(".close").addEventListener("click", () => clearText(), {});
 const add = document.querySelector(".addition").addEventListener("click", () => setOperation('+'), {});
 const sub = document.querySelector('.subtract').addEventListener("click", () => setOperation('-'), {});
 const mult = document.querySelector('.multiply').addEventListener("click", () => setOperation('*'), {});
@@ -29,7 +30,7 @@ function updateValue(value) {
     if (isFirstOperand === true) {
         currentValue = currentValue.toString() + value;        
         console.log("1 " +  currentValue);
-        display.innerText += currentValue;
+        display.innerText = parseInt(currentValue);
 }}; 
 
 function setOperation(operation) {
@@ -38,20 +39,40 @@ function setOperation(operation) {
     console.log(currentOperation);
     isSecondOperand = true
     isFirstOperand = false
+    display.innerText = parseInt(currentValue) + " " + currentOperation;
 };
 
 function setSecondOperand(value) {
     if (isSecondOperand === true) {
         secondOperand = secondOperand.toString() + value;        
         console.log("2 " + secondOperand);
-        display.innerText +=  secondOperand;
+        display.innerText = parseInt(currentValue) + " " + currentOperation + " " + parseInt(secondOperand);
+
     }
 };
 
 function answerEquation() {
     if (currentOperation === "+") {
-        sum = currentValue + secondOperand;
-        display.innerText = sum; 
+        sum = parseInt(currentValue) + parseInt(secondOperand);
+        display.innerText = parseInt(sum); 
+    } else if (currentOperation === "-") {
+        diff = parseInt(currentValue) - parseInt(secondOperand);
+        display.innerText = parseInt(diff); 
+    } else if (currentOperation === "*") {
+        product = parseInt(currentValue) * parseInt(secondOperand);
+        display.innerText = parseInt(product); 
+    } else if (currentOperation === "/") {
+        dividend = parseInt(currentValue) / parseInt(secondOperand);
+        display.innerText = parseInt(dividend); 
     }
+};
+
+function clearText() {
+    display.innerText = "";
+    currentOperation = null;
+    currentValue = 0; 
+    secondOperand = 0;
+    isSecondOperand = false; 
+    isFirstOperand = true; 
 };
 
