@@ -6,8 +6,12 @@ let secondOperand = 0;
 let isSecondOperand = false; 
 let isFirstOperand = true; 
 
-let display = document.querySelector('.display');
+const color = ["red", "orange", "yellow", "green", "blue", "purple"];
+let index = 1; 
 
+let display = document.querySelector('.display');
+const selfDestruct = document.querySelector('.disapear').addEventListener("click", () => everythingDisapears(), {});
+const changeColor = document.querySelector('.color').addEventListener("click", () => changeBackground(index), {});
 const clear = document.querySelector(".close").addEventListener("click", () => clearText(), {});
 const add = document.querySelector(".addition").addEventListener("click", () => setOperation('+'), {});
 const sub = document.querySelector('.subtract').addEventListener("click", () => setOperation('-'), {});
@@ -76,3 +80,11 @@ function clearText() {
     isFirstOperand = true; 
 };
 
+function everythingDisapears() {
+    document.body.style.display = "none";
+}
+
+function changeBackground() {
+    document.body.style.backgroundColor = color[index];
+    index = (index + 1) % color.length;
+ }
