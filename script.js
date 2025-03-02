@@ -9,6 +9,10 @@ let isFirstOperand = true;
 const color = ["red", "orange", "yellow", "green", "blue", "purple"];
 let index = 1; 
 
+const buttonColor = ["red", "orange", "yellow", "green", "blue", "purple"];
+let buttonIndex = 1; 
+
+
 //variables, event listeners, querey selectors
 let display = document.querySelector('.display');
 const useless = document.querySelector('.useless').addEventListener("click", () => uselessFunction(), {});
@@ -63,16 +67,16 @@ function setSecondOperand(value) {
 function answerEquation() {
     if (currentOperation === "+") {
         sum = parseInt(currentValue) + parseInt(secondOperand);
-        display.innerText = parseInt(sum); 
+        display.innerText = parseFloat(sum); 
     } else if (currentOperation === "-") {
         diff = parseInt(currentValue) - parseInt(secondOperand);
-        display.innerText = parseInt(diff); 
+        display.innerText = parseFloat(diff); 
     } else if (currentOperation === "*") {
         product = parseInt(currentValue) * parseInt(secondOperand);
-        display.innerText = parseInt(product); 
+        display.innerText = parseFloat(product); 
     } else if (currentOperation === "/") {
         dividend = parseInt(currentValue) / parseInt(secondOperand);
-        display.innerText = parseInt(dividend); 
+        display.innerText = parseFloat(dividend); 
     }
 };
 

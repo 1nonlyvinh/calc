@@ -1,3 +1,4 @@
+
 .calculator {
     width: 520px; 
     height: 400px; 
@@ -6,7 +7,6 @@
     display: flex;
     flex-direction: column;
     background-color: black;
-    margin-left: 31%;
     margin-top: 8%;  
 }
 
@@ -15,7 +15,7 @@
     width: 510px; 
     border: solid 4px;
     background-color: #ffffff;
-    font-family: cursive;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
     text-align: center;
 }
@@ -25,7 +25,7 @@ button {
     height: 50px; 
     background-color: rgb(132, 117, 129); 
     padding: 2px; 
-
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .number-row1, .number-row2, .number-row3, .operations {
@@ -33,4 +33,22 @@ button {
     flex-direction: row;
     margin-left: 7px; 
     padding: 2px; 
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 9%;
+    
+}
+
+img {
+    width: 300px;
+    height: 400px; 
 }
