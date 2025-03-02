@@ -9,10 +9,6 @@ let isFirstOperand = true;
 const color = ["red", "orange", "yellow", "green", "blue", "purple"];
 let index = 1; 
 
-const buttonColor = ["red", "orange", "yellow", "green", "blue", "purple"];
-let buttonIndex = 1; 
-
-
 //variables, event listeners, querey selectors
 let display = document.querySelector('.display');
 const useless = document.querySelector('.useless').addEventListener("click", () => uselessFunction(), {});
