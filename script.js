@@ -1,15 +1,17 @@
-// a lot of element ids for number values + operations
-
+// placeholder variables for operands, operation 
 let currentOperation = null;
 let currentValue = 0; 
 let secondOperand = 0;
 let isSecondOperand = false; 
 let isFirstOperand = true; 
 
+// array for all colors to eventually change background
 const color = ["red", "orange", "yellow", "green", "blue", "purple"];
 let index = 1; 
 
+//variables, event listeners, querey selectors
 let display = document.querySelector('.display');
+const useless = document.querySelector('.useless').addEventListener("click", () => uselessFunction(), {});
 const selfDestruct = document.querySelector('.disapear').addEventListener("click", () => everythingDisapears(), {});
 const changeColor = document.querySelector('.color').addEventListener("click", () => changeBackground(index), {});
 const clear = document.querySelector(".close").addEventListener("click", () => clearText(), {});
@@ -29,7 +31,7 @@ const eight = document.querySelector('.eight').addEventListener("click", () => u
 const zero = document.querySelector('.zero').addEventListener("click", () => updateValue(0) & setSecondOperand(0), {});
 const four = document.querySelector('.four').addEventListener("click", () => updateValue(4) & setSecondOperand(4), {});
 
-
+// function to create the first operand on click
 function updateValue(value) {
     if (isFirstOperand === true) {
         currentValue = currentValue.toString() + value;        
@@ -37,6 +39,7 @@ function updateValue(value) {
         display.innerText = parseInt(currentValue);
 }}; 
 
+// function to set operation of equation
 function setOperation(operation) {
     currentOperation = operation;
     display.innerText += currentOperation; 
@@ -46,6 +49,7 @@ function setOperation(operation) {
     display.innerText = parseInt(currentValue) + " " + currentOperation;
 };
 
+// function to set second operand 
 function setSecondOperand(value) {
     if (isSecondOperand === true) {
         secondOperand = secondOperand.toString() + value;        
@@ -55,6 +59,7 @@ function setSecondOperand(value) {
     }
 };
 
+//function to solve equation when equal is clicked 
 function answerEquation() {
     if (currentOperation === "+") {
         sum = parseInt(currentValue) + parseInt(secondOperand);
@@ -71,6 +76,7 @@ function answerEquation() {
     }
 };
 
+//function to clear text inside of display div
 function clearText() {
     display.innerText = "";
     currentOperation = null;
@@ -80,11 +86,18 @@ function clearText() {
     isFirstOperand = true; 
 };
 
+// self-destruct button
 function everythingDisapears() {
     document.body.style.display = "none";
 }
 
+// change backround function
 function changeBackground() {
     document.body.style.backgroundColor = color[index];
     index = (index + 1) % color.length;
- }
+}
+
+//useless function 
+function uselessFunction() {
+    alert("Why'd you click the useless button")
+}
