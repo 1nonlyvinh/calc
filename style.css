@@ -1,7 +1,7 @@
 
 .calculator {
     width: 520px; 
-    height: 400px; 
+    height: 420px; 
     border: solid black;
     padding: 5px;
     display: flex;
@@ -44,7 +44,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 9%;
+    margin-left: 13%;
     
 }
 
